@@ -1,0 +1,1 @@
+escribiendo en un archivo usando callback en NODEJS el dia 1/28/2023 en formato mes/dia/ano
