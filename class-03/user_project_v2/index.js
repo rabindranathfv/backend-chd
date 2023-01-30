@@ -9,18 +9,21 @@ const projectoUsuarios = async () => {
     const Manager = new ManagerUsuarios(rutaBase);
     const listaUsarios = await Manager.consultarUsuarios();
     console.log(
-      "🚀 ~ file: ManagerUsuarios.js:47 ~ listaUsarios",
+      "🚀 ~ file: index.js:11 ~ projectoUsuarios ~ listaUsarios",
       listaUsarios
     );
 
     const usuarioPrueba = {
-      nombre: "Arturo",
+      nombre: "Artro",
       apellido: "Hermida",
       nombreUsuario: "ahermida",
       contrasena: "123456",
     };
     const nuevoUsuario = await Manager.crearUsuarios(usuarioPrueba);
-    console.log('🚀 ~ file: index.js:23 ~ projectoUsuarios ~ nuevoUsuario', nuevoUsuario);
+    console.log(
+      "🚀 ~ file: index.js:24 ~ projectoUsuarios ~ nuevoUsuario",
+      nuevoUsuario
+    );
   } catch (error) {
     console.log("🚀 ~ file: index.js:20 ~ projectoUsuarios ~ error", error);
   }
