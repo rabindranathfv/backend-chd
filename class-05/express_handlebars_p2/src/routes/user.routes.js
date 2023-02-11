@@ -49,11 +49,11 @@ router.get(`/`, (req, res) => {
 });
 
 router.post(`/`, (req, res) => {
+  console.log("🚀 ~ file: index.js:53 ~ router.post ~ userBody", req.body);
   const userBody = req.body;
-  console.log("🚀 ~ file: index.js:31 ~ router.post ~ userBody", userBody);
-  const lastId = users[users.length - 1].id;
-  const newUser = { id: lastId + 1, ...userBody };
+  const newUser = { ...userBody };
   users.push(newUser);
+  console.log("🚀 ~ file: user.routes.js:56 ~ router.post ~ newUser", newUser);
 
   res.json({ ok: true, message: `usuario creado`, usuario: newUser });
 });
