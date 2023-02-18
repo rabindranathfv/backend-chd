@@ -24,18 +24,23 @@ app.use("/", viewsRoute);
 const server = app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 const io = new Server(server);
 
-const logs = [];
+// path.join(`${__dirname}/public/uploads/`
+
+const messages = [];
 io.on("connection", (socket) => {
   console.log("Socket connected");
 
   // message channel
   socket.on("message", (data) => {
+    console.log("🚀 ~ file: app.js:35 ~ socket.on ~ data", data);
     messages.push(data);
+    console.log("🚀 ~ file: app.js:37 ~ socket.on ~ messages", messages);
     io.emit("messageLogs", messages);
   });
 
   // authenticated channel
   socket.on("authenticated", (data) => {
+    console.log("🚀 ~ file: app.js:39 ~ socket.on ~ data", data);
     socket.broadcast.emit("newUserConnected", data);
   });
 });
