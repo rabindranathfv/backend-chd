@@ -55,10 +55,10 @@ class ProductRoute {
         if (!title || !description || !code || !price || !stock || !category)
           return res
             .status(400)
-            .json({ message: "Todos los campos son obligatorios" });
+            .json({ message: "all product files are mandatory" });
         await this.productManager.addProduct(newProduct);
         return res.status(200).json({
-          message: "Producto agregado correctamente",
+          message: "Add new Product successfully ",
           product: newProduct,
         });
       }
@@ -69,10 +69,6 @@ class ProductRoute {
       const productUpd = await this.productManager.updateProduct(
         Number(pid),
         req.body
-      );
-      console.log(
-        "🚀 ~ file: products.routes.js:69 ~ ProductRoute ~ this.router.put ~ productUpd:",
-        productUpd
       );
       if (!productUpd) {
         return res.status(200).json({
