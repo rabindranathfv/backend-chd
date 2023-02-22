@@ -4,6 +4,7 @@ const displayRoutes = require("express-routemap");
 
 const { API_VERSION, NODE_ENV, PORT } = require("./config/config");
 const corsConfig = require("./config/cors.config");
+const { mongoDBconnection } = require("./db/mongo.config");
 
 class App {
   app;
@@ -39,6 +40,7 @@ class App {
    */
   async connectToDatabase() {
     // TODO: Inicializar la conexion
+    await mongoDBconnection();
   }
 
   initializeMiddlewares() {

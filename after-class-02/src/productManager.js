@@ -9,10 +9,6 @@ class ProductManager {
   async addProduct(product) {
     try {
       this.products = await this.getProducts();
-      console.log(
-        "🚀 ~ file: productManager.js:12 ~ ProductManager ~ addProduct ~ products:",
-        this.products
-      );
       const id =
         this.products.length === 0
           ? 1
