@@ -12,14 +12,14 @@ const configConnection = {
 const mongoDBconnection = async () => {
   try {
     await connect(configConnection.url, configConnection.options);
-    console.info(`=================================`);
-    console.info(
-      `======= URL: ${configConnection.url.substring(0, 10)} =======`
+    console.log(`=================================`);
+    console.log(
+      `======= URL: ${configConnection.url.substring(0, 20)} =======`
     );
     console.log(`=================================`);
   } catch (error) {
     console.log(
-      "🚀 ~ file: mongo.config.js:15 ~ mongoDBconnection ~ error:",
+      "🚀 ~ file: mongo.config.js:23 ~ mongoDBconnection ~ error:",
       error
     );
     throw new Error(error);
