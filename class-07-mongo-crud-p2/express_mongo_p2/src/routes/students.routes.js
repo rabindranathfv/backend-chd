@@ -53,26 +53,6 @@ router.post("/", async (req, res) => {
   });
 });
 
-// router.get("/:sid", async (req, res) => {
-//   const { sid } = req.params;
-
-//   // {
-//   //   _id: sid;
-//   // }
-//   let student = await studentsModel.findById(sid);
-
-//   if (!student) {
-//     return res.json({
-//       message: " this student does not exist",
-//     });
-//   }
-
-//   return res.json({
-//     message: `student with id ${sid}`,
-//     student,
-//   });
-// });
-
 router.put("/:sid", async (req, res) => {
   const id = req.params.sid;
   const UpdateStudent = req.body;
@@ -219,6 +199,26 @@ router.get("/avanzados", async (req, res) => {
     updateStudentsAge,
     deleteJuanes,
     deleteAllStudents,
+  });
+});
+
+router.get("/:sid", async (req, res) => {
+  const { sid } = req.params;
+
+  // {
+  //   _id: sid;
+  // }
+  let student = await studentsModel.findById(sid);
+
+  if (!student) {
+    return res.json({
+      message: " this student does not exist",
+    });
+  }
+
+  return res.json({
+    message: `student with id ${sid}`,
+    student,
   });
 });
 
