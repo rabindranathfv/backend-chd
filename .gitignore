@@ -9,6 +9,8 @@
 /class-05/express_router_multer_p2/node_modules
 /class-05/express_handlebars_p1/node_modules
 /class-05/express_handlebars_p2/node_modules
-/class-06/express_handlebars_socket_p1/node_modules
-/class-06/express_socket_chat_handlebars_p1/node_modules
+/class-06-websocket-p1/express_handlebars_socket_p1/node_modules
+/class-06-websocket-chat-p2/express_socket_chat_handlebars_p1/node_modules
 /after-class-02/node_modules
+/class-07-mongo-crud-p1/express_mongo_p1/node_modules
+/class-07-mongo-crud-p2/express_mongo_p2/node_modules
