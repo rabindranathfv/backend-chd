@@ -5,10 +5,10 @@
 /class-04/express_p1/node_modules
 /class-04/express_words_p2/node_modules
 /class-04/server_http/node_modules
-/class-05/express_router_p1/node_modules
-/class-05/express_router_multer_p2/node_modules
-/class-05/express_handlebars_p1/node_modules
-/class-05/express_handlebars_p2/node_modules
+/class-05-router-multer-p1/express_router_p1/node_modules
+/class-05-router-multer-p1/express_router_multer_p2/node_modules
+/class-05-express-handlerbars-p2/express_handlebars_p1/node_modules
+/class-05-express-handlerbars-p2/express_handlebars_p2/node_modules
 /class-06-websocket-p1/express_handlebars_socket_p1/node_modules
 /class-06-websocket-chat-p2/express_socket_chat_handlebars_p1/node_modules
 /after-class-02/node_modules
