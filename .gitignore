@@ -1,12 +1,11 @@
-/class-03/calculator_age/node_modules
-/class-03/number_generator_project/node_modules
-/class-03/user_project_v2/node_modules
+/class-03-npm-p2/calculator_age/node_modules
+/class-03-npm-p2/number_generator_project/node_modules
+/class-03-filesystem-p1/user_project_hands_onlab/node_modules
+/class-03-filesystem-p1/user_project_crud_files_errors_handler/node_modules
 /after-class-01/node_modules
 /class-04-http-server-express-p1/express_p1/node_modules
 /class-04-express-avanzado-p2/express_words_p2/node_modules
-
 /class-04-http-server-express-p1/server_http/node_modules
-
 /class-05-router-multer-p1/express_router_p1/node_modules
 /class-05-router-multer-p1/express_router_multer_p2/node_modules
 /class-05-express-handlerbars-p2/express_handlebars_p1/node_modules
