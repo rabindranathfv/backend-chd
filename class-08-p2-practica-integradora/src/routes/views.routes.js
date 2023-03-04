@@ -9,11 +9,11 @@ class ViewsRoutes {
   }
 
   initViewsRoutes() {
-    this.router.get(`${this.path}/users`, async (req, res) => {
-      let users = [
+    this.router.get(`${this.path}/students`, async (req, res) => {
+      let students = [
         { name: "prueba", lastName: "apellidoPrueba", dni: "12345678" },
       ];
-      res.render("users", { users });
+      res.render("students", { students });
     });
 
     this.router.get(`${this.path}/courses`, async (req, res) => {

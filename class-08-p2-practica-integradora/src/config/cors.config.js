@@ -1,4 +1,4 @@
-const ORIGIN = "*";
+const { ORIGIN } = require("./config");
 
 const corsConfig = {
   allowedHeaders: "*",

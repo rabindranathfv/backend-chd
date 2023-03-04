@@ -6,6 +6,8 @@ const handlebars = require("express-handlebars");
 const corsConfig = require("./config/cors.config");
 const { mongoDBconnection } = require("./db/mongo.config");
 
+const { PORT, NODE_ENV } = require("./config/config");
+
 const API_VERSION = "v1";
 
 class App {
@@ -16,10 +18,10 @@ class App {
 
   constructor(routes) {
     this.app = express();
-    this.env = "development";
-    this.port = 5000;
+    this.env = NODE_ENV || "development";
+    this.port = Number(PORT) || 5000;
 
-    // this.connectToDatabase();
+    this.connectToDatabase();
     this.initializeMiddlewares();
     this.initializeRoutes(routes);
     this.initHandlebars();

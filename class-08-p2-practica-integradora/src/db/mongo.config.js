@@ -1,9 +1,6 @@
 const { connect } = require("mongoose");
 
-const DB_HOST = "localhost";
-const DB_PORT = 27027;
-const DB_NAME = "coursesDB";
-let DB_CNN;
+const { DB_HOST, DB_PORT, DB_NAME, DB_CNN } = require("../config/config");
 
 const configConnection = {
   url: DB_CNN ?? `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`,

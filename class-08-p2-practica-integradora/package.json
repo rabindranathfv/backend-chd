@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "cross-env NODE_ENV=development nodemon ./src/index",
+    "start:test": "cross-env NODE_ENV=test nodemon ./src/index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
