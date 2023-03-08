@@ -1,9 +1,11 @@
 const { Router } = require("express");
-const coursesModel = require("../models/courses.model");
+const coursesModel = require("../dao/models/courses.model");
+const CoursesManager = require("../dao/managers/courses.manager");
 
 class CoursesRoutes {
   path = "/courses";
   router = Router();
+  courseManager = new CoursesManager();
 
   constructor() {
     this.initCoursesRoutes();
@@ -11,44 +13,50 @@ class CoursesRoutes {
 
   initCoursesRoutes() {
     this.router.get(`${this.path}`, async (req, res) => {
-      const allCourses = await coursesModel.find({});
+      try {
+        const allCourses = await this.courseManager.getAllCourses();
 
-      return res.json({
-        message: `get all the courses availables`,
-        courses: allCourses,
-        amountOfCourses: allCourses.lenght,
-      });
+        return res.json({
+          message: `get all the courses availables`,
+          courses: allCourses,
+          amountOfCourses: allCourses.lenght,
+        });
+      } catch (error) {
+        console.log(
+          "🚀 ~ file: courses.routes.js:25 ~ CoursesRoutes ~ this.router.get ~ error:",
+          error
+        );
+      }
     });
 
     this.router.get(`${this.path}/:courseId`, async (req, res) => {
-      const id = req.params.courseId;
-      const courseDetail = await coursesModel.findById({ _id: id });
-      // TODO: Agregar validacion
+      try {
+        const id = req.params.courseId;
+        const courseDetail = await this.courseManager.getCourseById(id);
+        // TODO: Agregar validacion
 
-      return res.json({
-        message: `course details successfully`,
-        course: courseDetail,
-      });
+        return res.json({
+          message: `course details successfully`,
+          course: courseDetail,
+        });
+      } catch (error) {
+        console.log(
+          "🚀 ~ file: courses.routes.js:43 ~ CoursesRoutes ~ this.router.get ~ error:",
+          error
+        );
+      }
     });
 
     this.router.post(`${this.path}`, async (req, res) => {
       try {
         const coursesBody = req.body;
-
-        const checkCourse = await coursesModel.findOne({
-          title: `${coursesBody.title.toLowerCase()}`,
-        });
-
-        if (checkCourse) {
+        const newCourse = await this.courseManager.createCourses(coursesBody);
+        // TODO AGREGAR VALIDACIONES
+        if (!newCourse) {
           return res.json({
-            message: `this cuorse ${coursesBody.title} is already created`,
+            message: `this course ${courseBody.title} is already created`,
           });
         }
-
-        const newCourse = await coursesModel.create({
-          ...coursesBody,
-          title: coursesBody.title.toLowerCase(),
-        });
 
         return res.json({
           message: `the course is created succesfully`,

@@ -1,9 +1,9 @@
 const { Router } = require("express");
 
-const studentsModel = require("../models/students.models");
+const studentsModel = require("../dao/models/students.models");
 
 const studentsData = require("../db/students");
-const StudentManager = require("../managers/student.manager");
+const StudentManager = require("../dao/managers/student.manager");
 
 class StudentsRoutes {
   path = "/students";
@@ -52,7 +52,10 @@ class StudentsRoutes {
     this.router.get(`${this.path}/:studentId`, async (req, res) => {
       try {
         const { studentId } = req.params;
-        const studentDetail = await studentsModel.findById({ _id: studentId });
+        const studentDetail = await this.studentManager.getStudentById(
+          studentId
+        );
+        // TODO AGREGAR VALIDACION
 
         return res.json({
           message: `get student info of ${studentId} succesfully`,
@@ -72,17 +75,12 @@ class StudentsRoutes {
         const studentBody = req.body;
 
         // TODO REVISANDO SI EL ESTUDIANTE YA FUE CREADO ANTERIOMENTE
-        const studentDetail = await studentsModel.findOne({
-          dni: studentBody.dni,
-        });
-        if (studentDetail && Object.keys(studentDetail).length !== 0) {
+        const newStudent = await this.studentManager.createStudent(studentBody);
+        if (!newStudent) {
           return res.json({
             message: `the student with dni ${studentBody.dni} is already register`,
           });
         }
-
-        const newStudent = await studentsModel.create(studentBody);
-        // TODO: Manejar el error o si pasa algo mientras creo el documento de estudiante
 
         return res.json({
           message: `student created successfully`,
