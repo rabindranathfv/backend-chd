@@ -1,0 +1,21 @@
+version: "3.0"
+
+# Services to run
+services:
+  mongo_serv: # name of BD service
+    image: mongo
+    container_name: mongo_db_lab
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_lab:/data/configdb
+      - mongo_lab:/data/db
+    restart: always
+
+networks:
+  nodejs-network:
+    name: nodejs-network
+    driver: bridge
+
+volumes:
+  mongo_lab:
