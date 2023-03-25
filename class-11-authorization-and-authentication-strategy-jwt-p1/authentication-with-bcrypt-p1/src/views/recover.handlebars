@@ -1,0 +1,28 @@
+<div>
+  <h1>Recuperacion de contrasena</h1>
+
+  <div>
+    <form action="/api/session/recover-psw" method="post">
+      <label for="email">Correo</label><br />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="introduzca su correo electronico"
+      />
+      <br />
+      <label for="password">Nueva Contrasena</label>
+      <br />
+      <input
+        type="password"
+        name="new_password"
+        id="new_password"
+        placeholder="introduzca su nueva contrasena"
+        required
+      />
+      <br />
+      <button type="submit">actualizar contrasena</button>
+    </form>
+  </div>
+
+</div>
