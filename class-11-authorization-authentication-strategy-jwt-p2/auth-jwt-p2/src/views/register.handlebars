@@ -1,0 +1,53 @@
+<div>
+  <h1>Registro</h1>
+
+  <div>
+    <form action="/api/session/register" method="post">
+      <label for="nombre-cliente">Nombre del usuario</label><br />
+      <input
+        type="text"
+        name="first_name"
+        id="first_name"
+        placeholder="introduzca su nombre"
+        required
+      /><br />
+      <label for="last_name">Apellido</label><br />
+      <input
+        type="text"
+        name="last_name"
+        id="last_name"
+        placeholder="introduzca su apellido"
+        required
+      /><br />
+      <label for="email">Email</label><br />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="introduzca su correo electronico"
+        required
+      />
+      <br />
+      <label for="age">edad</label><br />
+      <input
+        type="number"
+        name="age"
+        id="age"
+        placeholder="introduzca su edad"
+        min="0"
+        required
+      />
+      <br />
+      <label for="password">Contrasena</label><br />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="introduzca su contrasena"
+        required
+      />
+      <br />
+      <button type="submit">submit</button>
+    </form>
+  </div>
+</div>
