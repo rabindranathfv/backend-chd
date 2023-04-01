@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <main>
+      <h1>Welcome to My Website</h1>
+
+      <div>
+        <form action="/api/session/login" method="post">
+          <label for="email">Correo</label><br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="introduzca su correo electronico"
+          />
+          <br />
+          <label for="password">Contrasena</label>
+          <br />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="introduzca su contrasena"
+          />
+          <br />
+          <button type="submit">submit</button>
+          <br />
+        </form>
+      </div>
+    </main>
+    <script src="./index.js"></script
+  </body>
+</html>
