@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const displayRoutes = require("express-routemap");
 const sessionRoutes = require("./routes/session.routes");
+const usersRoutes = require("./routes/user.routes");
 const mongoStore = require("connect-mongo");
 const passport = require("passport");
 const initializePassport = require("./config/passport.config");
@@ -46,6 +47,7 @@ const connection = mongoose
   });
 
 app.use("/api/session/", sessionRoutes);
+app.use("/api/users/", usersRoutes);
 
 app.listen(PORT, () => {
   displayRoutes(app);

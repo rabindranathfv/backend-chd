@@ -34,10 +34,8 @@ router.post("/login", async (req, res) => {
       role: findUser.role,
       id: findUser._id,
     };
-    console.log(
-      "🚀 ~ file: session.routes.js:35 ~ router.post ~ signUser:",
-      signUser
-    );
+    // if(!)
+
     const token = await generateJWT({ ...signUser });
 
     req.session.user = {
@@ -47,7 +45,7 @@ router.post("/login", async (req, res) => {
     return res.json({ message: `welcome $${email},login success`, token });
   } catch (error) {
     console.log(
-      "🚀 ~ file: session.routes.js:23 ~ router.post ~ error:",
+      "🚀 ~ file: session.routes.js:50 ~ router.post ~ error:",
       error
     );
   }
@@ -79,9 +77,10 @@ router.post("/register", async (req, res) => {
     });
   } catch (error) {
     console.log(
-      "🚀 ~ file: session.routes.js:36 ~ router.post ~ error:",
+      "🚀 ~ file: session.routes.js:79 ~ router.post ~ error:",
       error
     );
+    return res.json({ message: `${error}` });
   }
 });
 
