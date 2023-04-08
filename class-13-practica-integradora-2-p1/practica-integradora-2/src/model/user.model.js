@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 
 const collection = "Usuarios";
 
@@ -23,11 +24,18 @@ const schema = new mongoose.Schema({
       {
         note: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "notas"
-        }
-      }
-    ]
-  }
+          ref: "notas",
+        },
+      },
+    ],
+    default: [],
+  },
+});
+
+schema.plugin(mongoosePaginate);
+
+schema.pre("find", function () {
+  this.populate("notes.note");
 });
 
 const userModel = mongoose.model(collection, schema);
