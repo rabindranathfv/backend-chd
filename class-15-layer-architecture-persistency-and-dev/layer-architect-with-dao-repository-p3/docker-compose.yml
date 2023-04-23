@@ -4,12 +4,12 @@ version: "3.0"
 services:
   mongo_strategy: # name of BD service
     image: mongo
-    container_name: mongo_layer_arch
+    container_name: mongo_layer_arch_3
     ports:
       - 27017:27017
     volumes:
-      - mongolayerarch:/data/configdb
-      - mongolayerarch:/data/db
+      - mongolayerarch3:/data/configdb
+      - mongolayerarch3:/data/db
     restart: always
 
 networks:
@@ -18,4 +18,4 @@ networks:
     driver: bridge
 
 volumes:
-  mongolayerarch:
+  mongolayerarch3:
