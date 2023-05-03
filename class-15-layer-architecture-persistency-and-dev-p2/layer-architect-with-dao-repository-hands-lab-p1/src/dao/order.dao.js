@@ -24,7 +24,7 @@ export default class OrdersDao {
     }
   };
 
-  createOrders = async (order) => {
+  createOrder = async (order) => {
     try {
       const data = await orderModel.create(order);
       return data;

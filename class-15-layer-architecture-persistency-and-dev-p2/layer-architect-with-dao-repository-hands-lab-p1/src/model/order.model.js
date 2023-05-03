@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
-import { collection as collectionBussiness } from './bussiness.model';
-import { collection as collectionUser } from './user.model';
+import { collection as collectionBussiness } from "./bussiness.model.js";
+import { collection as collectionUser } from "./user.model.js";
 
 export const collection = "Orders";
 
@@ -16,7 +16,7 @@ const schema = new mongoose.Schema({
     ref: collectionUser,
   },
   products: [],
-  totalPrice: Number
+  totalPrice: Number,
 });
 
 schema.plugin(mongoosePaginate);

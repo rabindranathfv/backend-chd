@@ -51,3 +51,6 @@ class-16-email-sms-and-testing-mocks/email-p1/node_modules
 class-16-email-sms-and-testing-mocks/email-p1/.env.development
 class-16-email-sms-and-testing-mocks/sms-p2/node_modules
 class-16-email-sms-and-testing-mocks/sms-p2/.env.development
+
+class-16-email-sms-and-testing-mocks-p2/tdd-p1/node_modules
+class-16-email-sms-and-testing-mocks-p2/api-mocks-hands-lab-p2/node_modules

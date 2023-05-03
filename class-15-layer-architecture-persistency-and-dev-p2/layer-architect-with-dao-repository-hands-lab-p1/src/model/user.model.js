@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
-import { collection as collectionBussiness } from "./bussiness.model";
+import { collection as collectionBussiness } from "./bussiness.model.js";
 
 export const collection = "Users";
 
