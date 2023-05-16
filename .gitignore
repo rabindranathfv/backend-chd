@@ -54,3 +54,13 @@ class-16-email-sms-and-testing-mocks/sms-p2/.env.development
 
 class-16-email-sms-and-testing-mocks-p2/tdd-p1/node_modules
 class-16-email-sms-and-testing-mocks-p2/api-mocks-hands-lab-p2/node_modules
+
+class-17-package-and-versions-optimization/api-compress-p1/node_modules
+class-17-package-and-versions-optimization/api-mocks-error-handeling-p1/node_modules
+
+after-class-06/node-mongo-dockerized/node_modules
+
+class-18-logger-performance-clusters-scalability/loggers-p1/node_modules
+class-18-logger-performance-clusters-scalability/artillery-p2/node_modules
+
+class-18-logger-performance-clusters-scalability-p2/clusters-p1/node_modules

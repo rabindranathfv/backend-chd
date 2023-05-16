@@ -1,0 +1,37 @@
+config:
+  plugins:
+    metrics-by-endpoint: {}
+  target: "http://localhost:5000"
+  phases:
+    - duration: 20
+      arrivalRate: 10
+scenarios:
+  - name: "Sessions flow Register with Login"
+    flow:
+      - log: "Generated fake users"
+      - get:
+          url: "/api/test/user"
+          capture:
+            - json: "$.first_name"
+              as: "firstName"
+            - json: "$.last_name"
+              as: "lastName"
+            - json: "$.email"
+              as: "email"
+            - json: "$.password"
+              as: "password"
+      - log: "User Registered"
+      - post:
+          url: "/api/session/register"
+          json:
+            first_name: "{{ firstName }}"
+            last_name: "{{ lastName }}"
+            email: "{{ email }}"
+            password: "{{ password }}"
+      - think: 2
+      - log: "Login User"
+      - post:
+          url: "/api/session/login"
+          json:
+            email: "{{ email }}"
+            password: "{{ password }}"
