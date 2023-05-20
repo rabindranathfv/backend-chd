@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "cross-env NODE_ENV=development nodemon ./src/app",
+    "start:qa": "cross-env NODE_ENV=qa nodemon ./src/app",
     "start:prod": "cross-env NODE_ENV=production nodemon ./src/app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

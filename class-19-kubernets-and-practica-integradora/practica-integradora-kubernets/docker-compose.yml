@@ -4,18 +4,18 @@ services:
   # nombre del servicio
   mongodb:
     image: mongo
-    container_name: mongo_db_container_kb
+    container_name: mongo_db_container_practica3_kb
     ports:
       # local --> contenedor
       - 27017:27017
     restart: always
     volumes:
-      - mongodockerkb:/data/configdb
-      - mongodockerkb:/data/db
+      - mongodockerpractice3kb:/data/configdb
+      - mongodockerpractice3kb:/data/db
 
   api:
     build: .
-    container_name: api_container_kb
+    container_name: api_container_practice3_kb
     ports:
       # local --> contenedor
       - 6000:6000
@@ -27,4 +27,4 @@ services:
       - .:/usr/src/app
 
 volumes:
-  mongodockerkb:
+  mongodockerpractice3kb:
