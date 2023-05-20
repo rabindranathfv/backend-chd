@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubeservice
+spec:
+  selector:
+    app: nodemongodockerized
+  ports:
+    - port: 60
+      targetPort: 6000
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubedeploy
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nodemongodockerized
+  template:
+    metadata:
+      labels:
+        app: nodemongodockerized
+    spec:
+      containers:
+        - name: kubecontainer
+          image: rabindranathfv/node-mongo-kb:1.0.0
+          ports:
+            - containerPort: 6000
+          env:
+            - name: PORT
+              value: "6000"
+            - name: NODE_ENV
+              value: production
+            - name: DB_HOST
+              value: mongodb
+          imagePullPolicy: Always
