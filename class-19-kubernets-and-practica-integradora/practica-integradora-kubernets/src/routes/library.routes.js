@@ -6,14 +6,17 @@ import {
   getLibraryById,
   updateLibraryById,
 } from "../controllers/library.controller.js";
+import { validateCreateLibrary } from "../validations/library.validate.middleware.js";
+import { validateLibraryIdMdw } from "../middleware/id.validation.middleware.js";
 
 const router = Router();
 
 router.get("/", getAllLibraries);
 
-router.get("/:lid", getLibraryById);
+// /library/:lid?location=porto
+router.get("/:lid", validateLibraryIdMdw, getLibraryById);
 
-router.post("/", createLibrary);
+router.post("/", validateCreateLibrary, createLibrary);
 
 router.put("/:lid", updateLibraryById);
 

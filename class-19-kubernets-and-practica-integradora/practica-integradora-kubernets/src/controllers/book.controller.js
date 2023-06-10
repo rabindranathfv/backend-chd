@@ -36,8 +36,9 @@ export const getBookById = async (req, res) => {
 
 export const createBook = async (req, res) => {
   try {
+    const { lid } = req.params;
     const book = req.body;
-    const newBook = await bookService.createBook(book);
+    const newBook = await bookService.createBook(lid, book);
     return res.json({
       message: `createBook OK`,
       newBook,

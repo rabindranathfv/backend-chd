@@ -1,6 +1,9 @@
 import bookModel from "../model/book.model.js";
+import LibraryDao from "./library.dao.js";
 
 export default class BookDao {
+  LibraryService = new LibraryDao();
+
   getAllBooks = async () => {
     try {
       const data = await bookModel.find();
@@ -27,9 +30,18 @@ export default class BookDao {
     }
   };
 
-  createBook = async (book) => {
+  createBook = async (lId, book) => {
     try {
       const data = await bookModel.create(book);
+      const library = await this.LibraryService.getLibraryById(lId);
+
+      library.books.push({ book: data._id });
+      const bookUpd = await this.LibraryService.updateLibraryById(lId, library);
+      console.log(
+        "🚀 ~ file: book.dao.js:45 ~ BookDao ~ createBook= ~ bookUpd:",
+        bookUpd
+      );
+
       return data;
     } catch (error) {
       console.log(

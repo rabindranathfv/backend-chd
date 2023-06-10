@@ -12,16 +12,24 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  books: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Book",
-    },
-  ],
+  books: {
+    type: [
+      {
+        book: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Book",
+        },
+      },
+    ],
+  },
   createdAt: {
     type: Date,
     default: Date.now,
   },
+});
+
+schema.pre("find", function () {
+  this.populate("books.book");
 });
 
 schema.plugin(mongoosePaginate);
