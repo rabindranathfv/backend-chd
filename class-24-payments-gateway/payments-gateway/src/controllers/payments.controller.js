@@ -8,7 +8,7 @@ export const paymentsIntents = async (req, res) => {
     const newPayment = await paymentsDao.paymentsIntents(id);
 
     if (!newPayment) {
-      res.status(404).json({ message: `product not found` });
+      return res.status(404).json({ message: `product not found` });
     }
 
     return res.json({

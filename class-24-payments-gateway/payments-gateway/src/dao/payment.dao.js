@@ -28,6 +28,17 @@ export default class PaymentsDao {
       const paymentInfo = {
         amount: productRequested.price,
         currency: USD,
+        metadata: {
+          userId: `user-id-valid`,
+          orderDetails: JSON.stringify({
+            [productRequested.name]: 2
+          }, null, '\t'),
+          adrress: JSON.stringify( {
+            street: `calle valida de prueba`,
+            postalCode: 28001,
+            externalNumber: 25
+          }, null, '\t')
+        }
       };
 
       const paymentIntent = await this.stripe.paymentIntents.create(paymentInfo);
