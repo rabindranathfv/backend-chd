@@ -1,0 +1,21 @@
+version: "3.0"
+
+# Services to run
+services:
+  mongo_strategy: # name of BD service
+    image: mongo
+    container_name: mongo_layer_arch_3
+    ports:
+      - 27017:27017
+    volumes:
+      - mongolayerarch3:/data/configdb
+      - mongolayerarch3:/data/db
+    restart: always
+
+networks:
+  nodejs-network:
+    name: nodejs-network
+    driver: bridge
+
+volumes:
+  mongolayerarch3:

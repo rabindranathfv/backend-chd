@@ -1,0 +1,18 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "rabin",
+      "apellido": "ferreira",
+      "edad": 30,
+      "curso": "programacion back"
+    },
+    {
+      "id": 2,
+      "nombre": "Gaston",
+      "apellido": "Sosa",
+      "edad": 24,
+      "curso": "programacion backend"
+    }
+  ]
+}

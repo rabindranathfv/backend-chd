@@ -1,0 +1,21 @@
+version: "3.0"
+
+# Services to run
+services:
+  mongo_strategy: # name of BD service
+    image: mongo
+    container_name: node_email
+    ports:
+      - 27017:27017
+    volumes:
+      - mongonodemail:/data/configdb
+      - mongonodemail:/data/db
+    restart: always
+
+networks:
+  nodejs-network:
+    name: nodejs-network
+    driver: bridge
+
+volumes:
+  mongonodemail:

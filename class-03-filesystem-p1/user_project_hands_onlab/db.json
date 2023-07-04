@@ -1,0 +1,11 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "rabin",
+      "apellido": "ferreira",
+      "nombreUsuario": "rferreira",
+      "contrasena": "123456"
+    }
+  ]
+}

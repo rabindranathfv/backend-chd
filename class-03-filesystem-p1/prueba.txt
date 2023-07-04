@@ -1,0 +1,6 @@
+Hola soy un archivo!
+
+leyendo la entrada del archivo
+n 3 m 2
+1 2 -3
+3 -2 2

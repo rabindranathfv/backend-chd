@@ -1,0 +1,14 @@
+version: '3.0'
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo_nest_container2
+    ports:
+      - 27017:27017
+    volumes:
+      - mongonestdb2:/data/configdb
+      - mongonestdb2:/data/db
+
+volumes:
+  mongonestdb2: {}

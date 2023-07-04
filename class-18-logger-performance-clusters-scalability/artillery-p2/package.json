@@ -1,0 +1,36 @@
+{
+  "name": "express_mongo_p1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/app",
+    "start:dev": "nodemon ./src/app",
+    "test:performance:fake": "artillery quick --count 20 --num 20 http://localhost:5000/api/test/user -o usermock.json",
+    "test:performance:fake2": "artillery quick --count 20 --num 20 http://localhost:5000/api/alive -o alive-req.json",
+    "test:performance:json": "artillery run config.yml --output testPerformance.json",
+    "test:performance:report": "artillery report testPerformance.json -o testResults.html",
+    "check": "artillery help",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "artillery-plugin-metrics-by-endpoint": "^1.0.2",
+    "bcrypt": "^5.1.0",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.2",
+    "express-routemap": "^1.6.0",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.10.3"
+  },
+  "devDependencies": {
+    "artillery": "^2.0.0-31",
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.20"
+  }
+}

@@ -1,0 +1,5 @@
+{"level":"error","message":"Petición GET recibida en ERROR Error en GET HORRIBLE, NOS TUMBA LA API"}
+{"level":"warn","message":"Petición GET recibida en WARM"}
+
+{"level":"warn","message":"Petición GET recibida en WARM 2"}
+{"level":"error","message":"Petición GET recibida en ERROR Error en GET HORRIBLE, NOS TUMBA LA API 2"}

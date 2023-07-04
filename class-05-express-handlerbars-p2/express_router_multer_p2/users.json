@@ -1,0 +1,28 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "rabin",
+      "apellido": "ferreira",
+      "edad": 32,
+      "correo": "profesor@gmail.com",
+      "sexo": "m"
+    },
+    {
+      "id": 2,
+      "nombre": "Jose",
+      "apellido": "perez",
+      "edad": 18,
+      "correo": "jperez@gmail.com",
+      "Sexo": "m"
+    },
+    {
+      "id": 3,
+      "nombre": "Marta",
+      "apellido": "Cavalier",
+      "edad": 22,
+      "correo": "mcavalier@gmail.com",
+      "sexo": "f"
+    }
+  ]
+}

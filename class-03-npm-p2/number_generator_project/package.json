@@ -1,0 +1,16 @@
+{
+  "name": "number_generator_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "randomGenerator.js",
+  "scripts": {
+    "start:project": "node randomGenerator.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  }
+}

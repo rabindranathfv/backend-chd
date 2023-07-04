@@ -1,0 +1,21 @@
+version: "3.0"
+
+# Services to run
+services:
+  mongo_strategy: # name of BD service
+    image: mongo
+    container_name: mongo_layer_arch_hands_lab1
+    ports:
+      - 27017:27017
+    volumes:
+      - mongolayerarchlab1:/data/configdb
+      - mongolayerarchlab1:/data/db
+    restart: always
+
+networks:
+  nodejs-network:
+    name: nodejs-network
+    driver: bridge
+
+volumes:
+  mongolayerarchlab1:
